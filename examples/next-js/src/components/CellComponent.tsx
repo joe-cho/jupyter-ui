@@ -8,6 +8,7 @@
 
 import { Jupyter, Cell } from '@datalayer/jupyter-react';
 import { Theme } from '@primer/react/lib/ThemeProvider';
+import { jupyterServerDomain, jupyterServerToken} from './APIEndpoint.ts'
 
 type CellComponentProps = {
   colorMode: 'light' | 'dark';
@@ -20,9 +21,9 @@ export const CellComponent = (props: CellComponentProps) => {
     <>
       <div style={{fontSize: 20}}>Jupyter Cell in Next.js</div>
       <Jupyter
-        jupyterServerHttpUrl="https://oss.datalayer.run/api/jupyter-server"
-        jupyterServerWsUrl="wss://oss.datalayer.run/api/jupyter-server"
-        jupyterToken="60c1661cc408f978c309d04157af55c9588ff9557c9380e4fb50785750703da6"
+        jupyterServerHttpUrl={`http://localhost:3000/${jupyterServerDomain}`}
+        jupyterServerWsUrl={`ws://localhost:3000/${jupyterServerDomain}`}
+        jupyterToken={jupyterServerToken}
         colorMode={colorMode}
         theme={theme}
       >

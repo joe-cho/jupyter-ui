@@ -107,8 +107,8 @@ const JupyterDemo = () => {
           />
         </Box>
       </Box>
-      <NotebookComponentNoSSR colorMode={colorMode} theme={theme}/>
-      <CellComponentNoSSR colorMode={colorMode} theme={theme}/>
+      <NotebookComponentNoSSR colorMode={colorMode} theme={theme} />
+      { /* <CellComponentNoSSR colorMode={colorMode} theme={theme}/> */ }
     </>
   )
 }
